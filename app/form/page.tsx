@@ -41,7 +41,7 @@ export default function FormPage() {
     // ฟงกชันใหมสําหรับยิง API ไปที่ httpbin.org
     const submitFormData = async () => {
         try {
-            const response = await fetch('${process.env.NEXT_PUBLIC_API_URL}/appointments', {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/appointments`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
