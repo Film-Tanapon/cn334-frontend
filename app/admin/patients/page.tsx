@@ -1,6 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react'
 import DataTable from '../components/DataTable'
+import Link from 'next/link'
 // 1. กําหนด Interface สําหรับขอมูลคนไขที่รับมาจาก Backend
 interface PatientRecord {
     id: number
@@ -87,9 +88,9 @@ export default function PatientManagementPage() {
                     onChange={handleSearch}
                     className="px-4 py-2 border rounded-lg w-1/3 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
-                <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                <Link href="/admin/patients/create" className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" >
                     + เพิ่มข้อมูลใหม่
-                </button>
+                </Link>
             </div>
             <DataTable
                 columns={patientColumns}
