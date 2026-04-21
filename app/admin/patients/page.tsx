@@ -22,7 +22,7 @@ export default function PatientManagementPage() {
     }, [])
     const fetchPatients = async () => {
         try {
-            const response = await fetch('${process.env.NEXT_PUBLIC_API_URL}/patients')
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/patients`)
             if (response.ok) {
                 // 3. ระบุ Type ให้กับตัวแปร data ที่ได้จากการแปลง JSON
                 const data: PatientRecord[] = await response.json()

@@ -34,7 +34,7 @@ export default function EditPatientPage() {
   }, [patientId]);
   const fetchPatientData = async () => {
     try {
-      const response = await fetch("${process.env.NEXT_PUBLIC_API_URL}/patients");
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/patients`);
       if (response.ok) {
         const data = await response.json();
         const foundPatient = data.find((p: any) => p.id === Number(patientId));
