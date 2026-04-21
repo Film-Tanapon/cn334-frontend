@@ -34,7 +34,7 @@ export default function EditPatientPage() {
   }, [patientId]);
   const fetchPatientData = async () => {
     try {
-      const response = await fetch("http://localhost:3340/patients");
+      const response = await fetch("${process.env.NEXT_PUBLIC_API_URL}/patients");
       if (response.ok) {
         const data = await response.json();
         const foundPatient = data.find((p: any) => p.id === Number(patientId));
@@ -55,7 +55,7 @@ export default function EditPatientPage() {
   const handleUpdatePatient = async (formData: any) => {
     try {
       const response = await fetch(
-        `http://localhost:3340/patients/${patientId}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/patients/${patientId}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
